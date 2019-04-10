@@ -9,6 +9,8 @@ import { PetprofileComponent } from './petprofile/petprofile.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { CoverageComponent } from './coverage/coverage.component';
+import { QuoteComponent } from './quote/quote.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { CoverageComponent } from './coverage/coverage.component';
     PetprofileComponent,
     NavComponent,
     LoginComponent,
-    CoverageComponent
+    CoverageComponent,
+    QuoteComponent,
+    ContactusComponent
   ],
   imports: [
     BrowserModule,
