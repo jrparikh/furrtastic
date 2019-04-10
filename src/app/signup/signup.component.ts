@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-signup',
@@ -6,6 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+
+  @Input()
+  fname: string;
+  lname: string;
+  email: string;
+  phoneNum: string;
+  address: string;
+  state: string;
+  city: string;
+  zipCode: string;
+  username: string;
+  password: string;
 
   constructor() { }
 
