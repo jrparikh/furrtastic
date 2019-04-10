@@ -4,13 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { PetprofileComponent } from './petprofile/petprofile.component';
 import { NavComponent } from './nav/nav.component';
+import { LoginComponent } from './login/login.component';
+import { CoverageComponent } from './coverage/coverage.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'petprofile', component: PetprofileComponent},
-  {path: 'nav', component: NavComponent}
+  {path: 'nav', component: NavComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'coverage', component: CoverageComponent}
+
 
 ];
 
