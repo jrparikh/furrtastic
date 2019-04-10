@@ -1,14 +1,15 @@
 <form>
-    <div class="row">
-      <div class="col">
-          <label for="exampleFormControlSelect1">First Name</label>
-        <input type="text" class="form-control" placeholder="First name">
-      </div>
-      <div class="col">
-          <label for="exampleFormControlSelect1">Last Name</label>
-        <input type="text" class="form-control" placeholder="Last name">
-      </div>
+  <div class="row">
+    <div class="col">
+        <label for="exampleFormControlSelect1">First Name</label>
+      <input type="text" class="form-control" placeholder="First name"[(ngModel)]="fname" [ngModelOptions]="{standalone: true}">
+    <h1>{{fname}}</h1>
     </div>
+    <div class="col">
+        <label for="exampleFormControlSelect1">Last Name</label>
+      <input type="text" class="form-control" placeholder="Last name">
+    </div>
+  </div>
 
     <div class="row">
         <div class="col">
