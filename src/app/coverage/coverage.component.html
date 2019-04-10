@@ -1,6 +1,10 @@
+
+<div class="container">
+    <div class="jumbotron">
 <h4>Please choose your coverage options</h4>
+<br/>
 <form>
-<label>Deductable</label>
+<h6>Deductable</h6>
 <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
     <label class="form-check-label" for="inlineRadio1">$250</label>
@@ -14,7 +18,9 @@
       <label class="form-check-label" for="inlineRadio2">$500</label>
     </div>
     <br/>
-    <label>Reimbursement Level</label>
+    <br/>
+    <h6>Reimbursement Level</h6>
+ 
 <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
     <label class="form-check-label" for="inlineRadio1">80%</label>
@@ -28,7 +34,9 @@
       <label class="form-check-label" for="inlineRadio2">100%</label>
     </div>
 <br/>
-    <label>Coverage</label>
+<br/>
+    <h6>Coverage</h6>
+    
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
         <label class="form-check-label" for="inlineCheckbox1">Accident & Illness</label>
@@ -41,5 +49,17 @@
           <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
           <label class="form-check-label" for="inlineCheckbox2">RX Medications</label>
         </div>
-   
+        <br/>
+        <br/>
+        <div class="row">
+            <div class="col">
+                <a routerLink="/home"><button type="submit" class="btn btn-primary">Cancel</button></a>
+            </div>
+            <div class="col">
+                <a routerLink="/quote"><button type="submit" class="btn btn-primary">Next</button></a>
+            </div>
+          </div>
+      
   </form>
+  </div>
+  </div>

@@ -6,6 +6,8 @@ import { PetprofileComponent } from './petprofile/petprofile.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { CoverageComponent } from './coverage/coverage.component';
+import { QuoteComponent } from './quote/quote.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +16,9 @@ const routes: Routes = [
   {path: 'petprofile', component: PetprofileComponent},
   {path: 'nav', component: NavComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'coverage', component: CoverageComponent}
+  {path: 'coverage', component: CoverageComponent},
+  {path: 'quote', component: QuoteComponent},
+  {path: 'contactus', component: ContactusComponent}
 
 
 ];
