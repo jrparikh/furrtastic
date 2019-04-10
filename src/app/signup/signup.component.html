@@ -2,34 +2,36 @@
   <div class="row">
     <div class="col">
         <label for="exampleFormControlSelect1">First Name</label>
-      <input type="text" class="form-control" placeholder="First name"[(ngModel)]="fname" [ngModelOptions]="{standalone: true}">
-    <h1>{{fname}}</h1>
+      <input type="text" class="form-control" #fname  placeholder="First name">
+        <!-- <div *ngIf="User">
+          <h1>{{User.fname}} {{User.lname}} {{User.email}} {{User.number}} {{User.address}} {{User.state}} {{User.city}} {{User.zip}} {{User.userN}} {{User.passW}}</h1>
+        </div> -->
     </div>
     <div class="col">
         <label for="exampleFormControlSelect1">Last Name</label>
-      <input type="text" class="form-control" placeholder="Last name">
+      <input type="text" class="form-control" #lname placeholder="Last name">
     </div>
   </div>
 
     <div class="row">
         <div class="col">
             <label for="exampleFormControlSelect1">Email</label>
-          <input type="text" class="form-control" placeholder="Email">
+          <input type="text" class="form-control" #email placeholder="Email">
         </div>
         <div class="col">
             <label for="exampleFormControlSelect1">Phone Number</label>
-          <input type="text" class="form-control" placeholder="Phone Number">
+          <input type="text" class="form-control" #number placeholder="Phone Number">
         </div>
       </div>
 
       <div class="row">
           <div class="col">
               <label for="exampleFormControlSelect1">Address</label>
-            <input type="text" class="form-control" placeholder="Address">
+            <input type="text" class="form-control" #address placeholder="Address">
           </div>
           <div class="col">
             <label for="exampleFormControlSelect1">State</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" #state id="exampleFormControlSelect1">
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -88,24 +90,24 @@
         <div class="row">
             <div class="col">
                 <label for="exampleFormControlSelect1">City</label>
-              <input type="text" class="form-control" placeholder="City">
+              <input type="text" class="form-control" #city placeholder="City">
             </div>
             <div class="col">
                 <label for="exampleFormControlSelect1">Zip Code</label>
-              <input type="text" class="form-control" placeholder="Zip Code">
+              <input type="text" class="form-control" #zip placeholder="Zip Code">
             </div>
           </div>
 
           <div class="row">
               <div class="col">
                   <label for="exampleFormControlSelect1">Username</label>
-                <input type="text" class="form-control" placeholder="User Name">
+                <input type="text" class="form-control" #userN placeholder="User Name">
               </div>
               <div class="col">
                   <label for="exampleFormControlSelect1">Password</label>
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" #passW placeholder="Password">
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary" (click)="onEnter(fname.value , lname.value, email.value, number.value, address.value, state.value, city.value, zip.value, userN.value,  passW.value)">Login</button>
    </form>
