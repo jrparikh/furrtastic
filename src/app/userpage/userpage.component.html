@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="jumbotron">
+
+      <h3>Welcome "insert name"</h3>
+      <br/>
+      <br/>
+
+
+      <h5>Plans</h5>
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Pet name</th>
+              <th scope="col">Deductable</th>
+              <th scope="col">Reimbursement Level</th>
+              <th scope="col">Coverage</th>
+              <th scope="col">Buy now</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{petname}}</th>
+              <td>{{deductable}}</td>
+              <td>{{reimbursementlevel}}</td>
+              <td>{{coverage}}</td>
+              <td> <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                </div></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <form>
+            <div class="row">
+                <div class="col">
+                    <a routerLink="/petprofile"><button type="submit" class="btn btn-primary">Sign up for another plan</button></a>
+                </div>
+                <div class="col">
+                    <a routerLink="/payment"><button type="submit" class="btn btn-primary">Buy Now</button></a>
+                </div>
+              </div>
+        </form>
+
+</div>
+</div>
