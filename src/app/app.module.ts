@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { CoverageComponent } from './coverage/coverage.component';
 import { QuoteComponent } from './quote/quote.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { UserpageComponent } from './userpage/userpage.component';
+import { PaymentComponent } from './payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ContactusComponent } from './contactus/contactus.component';
     LoginComponent,
     CoverageComponent,
     QuoteComponent,
-    ContactusComponent
+    ContactusComponent,
+    UserpageComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

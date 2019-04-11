@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { CoverageComponent } from './coverage/coverage.component';
 import { QuoteComponent } from './quote/quote.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { UserpageComponent } from './userpage/userpage.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -18,7 +20,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'coverage', component: CoverageComponent},
   {path: 'quote', component: QuoteComponent},
-  {path: 'contactus', component: ContactusComponent}
+  {path: 'contactus', component: ContactusComponent},
+  {path: 'userpage', component: UserpageComponent},
+  {path: 'payment', component: PaymentComponent}
 
 
 ];
