@@ -3,6 +3,7 @@ import { User } from 'user';
 import { UserService } from 'user.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { error } from 'util';
 
 
 @Component({
@@ -40,13 +41,16 @@ export class SignupComponent {
   }
 
 
-  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): Observable<any>{
+  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void{
     this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
-    return this._http.post<User>(this.APP_URL, this.user).subscribe(
-      (data: any) => {
+    this._http.post<User>(this.APP_URL, this.user).subscribe(
+      data => {
         console.log(this.user);
+      },
+      error => {
+        console.log('Error occured', error);
       }
-    )
+    );
 
     //return of(this.user);
   }
