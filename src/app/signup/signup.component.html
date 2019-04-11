@@ -111,6 +111,6 @@
               </div>
             </div>
 
-            <button type="submit" class="btn btn-primary" (click)="onEnter(fname.value , lname.value, email.value, number.value, address.value, state.value, city.value, zip.value, userN.value,  passW.value)">Login</button>
+            <button type="submit" class="btn btn-primary" (click)="userService.getUsers(fname.value , lname.value, email.value, number.value, address.value, state.value, city.value, zip.value, userN.value,  passW.value)">Login</button>
    </form>
 
