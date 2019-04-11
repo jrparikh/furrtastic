@@ -16,11 +16,24 @@ export class SignupComponent {
 
   constructor(private userService: UserService) { }
   
+  // add(sUser: User): void{
+  //   const newUser: User = Object.assign({}, this.user);
+  //   this.userService.addUser(sUser).subscribe(
+  //     (data: User) => {
+  //       console.log(data);
+  //     },
+  //     (error: any) => console.log(error)
+  //   );
+  // }
+  
 
   getUser(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void {
-    this.userService.getUsers(value, value2, value3, value4, value5, value6, value7, value8, value9, value10).subscribe(user => this.user = user);
-    this.userService.addUser(this.user).subscribe();
-
+    this.userService.getUsers(value, value2, value3, value4, value5, value6, value7, value8, value9, value10).subscribe(
+      (data: User) => {
+        console.log("data: " + data);
+      },
+      (error: any) => console.log("error: " + error)
+    );
   }
 
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {
