@@ -14,7 +14,10 @@ export class SignupComponent {
   
   user: User;
 
-  constructor(private userService: UserService) { }
+  APP_URL = 'http://localhost:8080/signup.app';
+  handleError: any;
+
+  constructor(private userService: UserService, private _http: HttpClient) { }
   
   // add(sUser: User): void{
   //   const newUser: User = Object.assign({}, this.user);
@@ -36,6 +39,17 @@ export class SignupComponent {
     );
   }
 
+
+  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): Observable<any>{
+    this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
+    return this._http.post<User>(this.APP_URL, this.user).subscribe(
+      (data: any) => {
+        console.log(this.user);
+      }
+    )
+
+    //return of(this.user);
+  }
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {
   //   // this.user.fname= value;
   //   // this.user.lname= value2;

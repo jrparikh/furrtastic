@@ -15,19 +15,18 @@ export class UserService {
 
   constructor(private _http: HttpClient) { }
 
-  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): Observable<any>{
+  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): Observable<User>{
     this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
     console.log(this.user);
-    return this._http.post<User>(this.APP_URL, this.user, 
-      {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
-      })
-    .pipe(catchError(err => this.handleError(err))
-    );
+    // return this._http.post<User>(this.APP_URL, this.user).subscribe
+      
+    // .pipe(catchError(err => 
+      
+    //   this.handleError(err)
+    //   )
+    // );
 
-    //return of(this.user);
+    return of(this.user);
   }
 
   // addUser (sUser: User): Observable<User>{
