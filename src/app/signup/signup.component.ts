@@ -1,23 +1,26 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'user';
 import { UserService } from 'user.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   
   user: User;
 
   constructor(private userService: UserService) { }
-
-  ngOnInit() {
-  }
   
+
   getUser(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void {
     this.userService.getUsers(value, value2, value3, value4, value5, value6, value7, value8, value9, value10).subscribe(user => this.user = user);
+    this.userService.addUser(this.user).subscribe();
+
   }
 
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {

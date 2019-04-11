@@ -13,6 +13,7 @@ import { QuoteComponent } from './quote/quote.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { PaymentComponent } from './payment/payment.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PaymentComponent } from './payment/payment.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
