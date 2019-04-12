@@ -13,6 +13,9 @@ import { QuoteComponent } from './quote/quote.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PetprofileuserComponent } from './petprofileuser/petprofileuser.component';
+import { CoverageuserComponent } from './coverageuser/coverageuser.component';
+import { QuoteuserComponent } from './quoteuser/quoteuser.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { PaymentComponent } from './payment/payment.component';
     QuoteComponent,
     ContactusComponent,
     UserpageComponent,
-    PaymentComponent
+    PaymentComponent,
+    PetprofileuserComponent,
+    CoverageuserComponent,
+    QuoteuserComponent
   ],
   imports: [
     BrowserModule,
