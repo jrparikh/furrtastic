@@ -1,25 +1,86 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from 'user';
 import { UserService } from 'user.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { error } from 'util';
+
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent {
   
   user: User;
 
-  constructor(private userService: UserService) { }
+  APP_URL = 'http://localhost:4200/signup';
 
-  ngOnInit() {
-  }
+  //APP_URL = 'http://localhost:8080/signup.app';
+  handleError: any;
+
+  constructor(private userService: UserService, private _http: HttpClient) { }
   
+  // add(sUser: User): void{
+  //   const newUser: User = Object.assign({}, this.user);
+  //   this.userService.addUser(sUser).subscribe(
+  //     (data: User) => {
+  //       console.log(data);
+  //     },
+  //     (error: any) => console.log(error)
+  //   );
+  // }
+  
+
   getUser(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void {
-    this.userService.getUsers(value, value2, value3, value4, value5, value6, value7, value8, value9, value10).subscribe(user => this.user = user);
+    this.userService.getUsers(value, value2, value3, value4, value5, value6, value7, value8, value9, value10).subscribe(
+      (data: User) => {
+        console.log("data: " + data);
+      },
+      (error: any) => console.log("error: " + error)
+    );
   }
 
+  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void{
+    this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
+    const req = this._http.post(this.APP_URL, {
+      fname: this.user.fname,
+      lname: this.user.lname,
+      email: this.user.email,
+      phoneNum: this.user.phoneNum,
+      address: this.user.address,
+      state: this.user.state,
+      city: this.user.city,
+      zipCode: this.user.zipCode,
+      username: this.user.username,
+      password: this.user.password,
+      })
+        .subscribe(
+          res => {
+            console.log(res);
+          },
+          err => {
+            console.log("Error occured");
+          }
+        );
+
+    // const req = this._http.post('http://jsonplaceholder.typicode.com/posts', {
+    //   title: 'foo',
+    //   body: 'bar',
+    //   userId: 1
+    // })
+    //   .subscribe(
+    //     res => {
+    //       console.log(res);
+    //     },
+    //     err => {
+    //       console.log("Error occured");
+    //     }
+    //   );
+
+    //return of(this.user);
+  }
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {
   //   // this.user.fname= value;
   //   // this.user.lname= value2;

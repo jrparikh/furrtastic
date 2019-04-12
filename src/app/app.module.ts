@@ -16,6 +16,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PetprofileuserComponent } from './petprofileuser/petprofileuser.component';
 import { CoverageuserComponent } from './coverageuser/coverageuser.component';
 import { QuoteuserComponent } from './quoteuser/quoteuser.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { QuoteuserComponent } from './quoteuser/quoteuser.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
