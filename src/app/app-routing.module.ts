@@ -10,6 +10,9 @@ import { QuoteComponent } from './quote/quote.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { UserpageComponent } from './userpage/userpage.component';
 import { PaymentComponent } from './payment/payment.component';
+import { PetprofileuserComponent } from './petprofileuser/petprofileuser.component';
+import { CoverageuserComponent } from './coverageuser/coverageuser.component';
+import { QuoteuserComponent } from './quoteuser/quoteuser.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,8 +25,10 @@ const routes: Routes = [
   {path: 'quote', component: QuoteComponent},
   {path: 'contactus', component: ContactusComponent},
   {path: 'userpage', component: UserpageComponent},
-  {path: 'payment', component: PaymentComponent}
-
+  {path: 'payment', component: PaymentComponent},
+  {path: 'petprofileuser', component: PetprofileuserComponent},
+  {path: 'coverageuser', component: CoverageuserComponent},
+  {path: 'quoteuser', component: QuoteuserComponent}
 
 ];
 
