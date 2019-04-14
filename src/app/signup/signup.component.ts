@@ -15,9 +15,9 @@ export class SignupComponent {
   
   user: User;
 
-  APP_URL = 'http://localhost:4200/signup';
-
-  //APP_URL = 'http://localhost:8080/signup.app';
+  //APP_URL = 'http://localhost:4200/signup';
+  APP_URL = ' http://localhost:3000/';
+  //APP_URL = 'http://localhost:8090/signup.app';
   handleError: any;
 
   constructor(private userService: UserService, private _http: HttpClient) { }
@@ -42,9 +42,9 @@ export class SignupComponent {
     );
   }
 
-  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void{
+  setUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void{
     this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
-    const req = this._http.post(this.APP_URL, {
+    const req = this._http.post(this.APP_URL + this.user.username, {
       fname: this.user.fname,
       lname: this.user.lname,
       email: this.user.email,
@@ -61,25 +61,9 @@ export class SignupComponent {
             console.log(res);
           },
           err => {
-            console.log("Error occured");
+            console.log(err);
           }
         );
-
-    // const req = this._http.post('http://jsonplaceholder.typicode.com/posts', {
-    //   title: 'foo',
-    //   body: 'bar',
-    //   userId: 1
-    // })
-    //   .subscribe(
-    //     res => {
-    //       console.log(res);
-    //     },
-    //     err => {
-    //       console.log("Error occured");
-    //     }
-    //   );
-
-    //return of(this.user);
   }
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {
   //   // this.user.fname= value;
