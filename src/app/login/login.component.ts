@@ -11,7 +11,8 @@ export class LoginComponent implements OnInit {
 
   user: any;
   username: string;
-  APP_URL = ' http://localhost:3000/posts/';
+  //APP_URL = 'http://localhost:3000/posts/';
+  APP_URL = 'http:/localhost:8080/login.app';
   constructor(private _http: HttpClient) { }
 
   ngOnInit() {
@@ -22,15 +23,15 @@ export class LoginComponent implements OnInit {
       data => {
         this.user = data;
         //console.log("Data: ",data);
-        for(let i in this.user){
+        for(let user in this.user){
           //console.log(i);
-          let x = this.user[i].username;
+          let theUser = this.user[user];
+          let xUsername = theUser.username;
+          let xFname = theUser.fname;
           //console.log(x);
           //console.log("gUsername: ",gUsername);            
-          if(x === gUsername){
-            console.log(gUsername);
-          }else{
-            console.log("WRONG");
+          if(xUsername === gUsername){
+            console.log(xFname);
           }
             
           //}
