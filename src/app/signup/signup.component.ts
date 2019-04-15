@@ -42,36 +42,36 @@ export class SignupComponent {
     );
   }
 //value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string
-  setUsers(theUser: User){
-    this.newUser = theUser;
-    console.log("please work: " + this.newUser);
-    return this._http.post(this.APP_URL + '/signup', this.newUser)
-      .subscribe(
-        data => {
-          console.log(data);
-        }
-      );
-    // this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
-    // const req = this._http.post(this.APP_URL, {
-    //   fname: this.user.fname,
-    //   lname: this.user.lname,
-    //   email: this.user.email,
-    //   phoneNum: this.user.phoneNum,
-    //   address: this.user.address,
-    //   state: this.user.state,
-    //   city: this.user.city,
-    //   zipCode: this.user.zipCode,
-    //   username: this.user.username,
-    //   password: this.user.password,
-    //   })
-    //     .subscribe(
-    //       res => {
-    //         console.log(res);
-    //       },
-    //       err => {
-    //         console.log(err);
-    //       }
-    //     );
+  setUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string){
+    // this.newUser = theUser;
+    // console.log("please work: " + this.newUser);
+    // return this._http.post(this.APP_URL + '/signup', this.newUser)
+    //   .subscribe(
+    //     data => {
+    //       console.log(data);
+    //     }
+    //   );
+    this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
+    const req = this._http.post(this.APP_URL, {
+      fname: this.user.fname,
+      lname: this.user.lname,
+      email: this.user.email,
+      phoneNum: this.user.phoneNum,
+      address: this.user.address,
+      state: this.user.state,
+      city: this.user.city,
+      zipCode: this.user.zipCode,
+      username: this.user.username,
+      password: this.user.password,
+      })
+        .subscribe(
+          res => {
+            console.log(res);
+          },
+          err => {
+            console.log(err);
+          }
+        );
   }
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {
   //   // this.user.fname= value;

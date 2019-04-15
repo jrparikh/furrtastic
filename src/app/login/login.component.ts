@@ -11,8 +11,8 @@ export class LoginComponent implements OnInit {
 
   user: any;
   username: string;
-  APP_URL = 'http://localhost:3000/posts/';
-  //APP_URL = 'http:/localhost:8080/Furrtastic';
+  //APP_URL = 'http://localhost:3000/posts/';
+  APP_URL = 'http:/localhost:8080/Furrtastic';
   constructor(private _http: HttpClient) { }
 
   ngOnInit() {
