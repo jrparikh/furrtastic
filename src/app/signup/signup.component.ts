@@ -45,7 +45,12 @@ export class SignupComponent {
   setUsers(theUser: User){
     this.newUser = theUser;
     console.log("please work: " + this.newUser);
-    return this._http.post(this.APP_URL + '/signup', this.newUser);
+    return this._http.post(this.APP_URL + '/signup', this.newUser)
+      .subscribe(
+        data => {
+          console.log(data);
+        }
+      );
     // this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
     // const req = this._http.post(this.APP_URL, {
     //   fname: this.user.fname,
