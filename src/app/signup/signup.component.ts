@@ -15,7 +15,7 @@ export class SignupComponent {
   
   user: User;
   blah: any;
-  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank',);
+  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank',);
   //APP_URL = 'http://localhost:4200/signup';
   //APP_URL = ' http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic';
@@ -35,7 +35,7 @@ export class SignupComponent {
   
 
   getUser(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void {
-    this.userService.getUsers(value, value2, value3, value4, value5, value6, value7, value8, value9, value10).subscribe(
+    this.userService.getUsers(value, value2, value3, value5, value6, value7, value8, value9, value10).subscribe(
       (data: User) => {
         console.log("data: " + data);
       },
@@ -52,7 +52,7 @@ export class SignupComponent {
     //       console.log(data);
     //     }
     //   );
-    this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
+    this.user = new User(value, value2, value3, value5, value6, value7, value8, value9, value10);
     // this.user.fname= value;
     // this.user.lname= value2;
     // this.user.email= value3;
