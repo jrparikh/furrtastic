@@ -14,7 +14,8 @@ import { error } from 'util';
 export class SignupComponent {
   
   user: User;
-  newUser = new User();
+  blah: any;
+  //newUser = new User();
   //APP_URL = 'http://localhost:4200/signup';
   //APP_URL = ' http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic';
@@ -52,26 +53,44 @@ export class SignupComponent {
     //     }
     //   );
     this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
-    const req = this._http.post(this.APP_URL, {
-      fname: this.user.fname,
-      lname: this.user.lname,
-      email: this.user.email,
-      phoneNum: this.user.phoneNum,
-      address: this.user.address,
-      state: this.user.state,
-      city: this.user.city,
-      zipCode: this.user.zipCode,
-      username: this.user.username,
-      password: this.user.password,
-      })
-        .subscribe(
-          res => {
-            console.log(res);
-          },
-          err => {
-            console.log(err);
-          }
-        );
+    // this.user.fname= value;
+    // this.user.lname= value2;
+    // this.user.email= value3;
+    // this.user.phoneNum= value4;
+    // this.user.address= value5;
+    // this.user.state= value6;
+    // this.user.city= value7;
+    // this.user.zipCode= value8;
+    // this.user.username= value9;
+    // this.user.password= value10;
+    console.log(this.user);
+    console.log(this.user.fname);
+    
+    this.blah = this._http.post(this.APP_URL + '/signup.app', this.user).subscribe(
+      data => console.log('success ', data),
+      error => console.log('failed', error)
+    );
+    console.log(this.blah);
+    // const req = this._http.post(this.APP_URL + '/signup.app', {
+    //   fname: this.user.fname,
+    //   lname: this.user.lname,
+    //   email: this.user.email,
+    //   phoneNum: this.user.phoneNum,
+    //   address: this.user.address,
+    //   state: this.user.state,
+    //   city: this.user.city,
+    //   zipCode: this.user.zipCode,
+    //   username: this.user.username,
+    //   password: this.user.password,
+    //   })
+    //     .subscribe(
+    //       res => {
+    //         console.log(res);
+    //       },
+    //       err => {
+    //         console.log(err);
+    //       }
+    //     );
   }
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {
   //   // this.user.fname= value;
