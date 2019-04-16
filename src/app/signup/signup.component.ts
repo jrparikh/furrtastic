@@ -15,7 +15,7 @@ export class SignupComponent {
   
   user: User;
   blah: any;
-  //newUser = new User();
+  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank',);
   //APP_URL = 'http://localhost:4200/signup';
   //APP_URL = ' http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic';
@@ -43,7 +43,7 @@ export class SignupComponent {
     );
   }
 //value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string
-  setUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string){
+  fetUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string){
     // this.newUser = theUser;
     // console.log("please work: " + this.newUser);
     // return this._http.post(this.APP_URL + '/signup', this.newUser)
@@ -64,8 +64,8 @@ export class SignupComponent {
     // this.user.username= value9;
     // this.user.password= value10;
     console.log(this.user);
-    console.log(this.user.fname);
-    
+    //console.log(this.user.fname);
+    //fname.value, lname.value, email.value, number.value, address.value, state.value, city.value, zip.value, userN.value, passW.value
     this.blah = this._http.post(this.APP_URL + '/signup.app', this.user).subscribe(
       data => console.log('success ', data),
       error => console.log('failed', error)
@@ -116,4 +116,11 @@ export class SignupComponent {
   //   // console.log(this.user.username);
   //   // console.log(this.user.password);
   // }
+
+  setUsers(){
+    this.userService.signup(this.newUser).subscribe(
+      data => console.log('success', data),
+      error => console.log('failed', error)
+    )
+  }
 }

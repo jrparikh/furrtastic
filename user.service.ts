@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 export class UserService {
   user: User;
 
-  APP_URL = 'http://localhost:8080/signup.app';
+  APP_URL = 'http://localhost:8080/Furrtastic';
   handleError: any;
 
   constructor(private _http: HttpClient) { }
@@ -40,4 +40,10 @@ export class UserService {
   //   .pipe(catchError(err => this.handleError(err))
   //   );
   // }
+
+    signup(user: User){
+      console.log(user);
+      return this._http.post<any>(this.APP_URL + '/signup.app', user);
+      //console.log(this._http.post<any>(this.APP_URL + '/signup.app', user));
+    }
 }
