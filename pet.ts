@@ -6,8 +6,8 @@ export class Pet {
     // age: string;
     // size: string;
     // condition: string;
-
-    
+    user: User;
+    insurance: any;
   
     constructor(name: string, type: string, weight: string, age: string, conditions: string, user: User, insurance: any){
       // this.name= fname;
