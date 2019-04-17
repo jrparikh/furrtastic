@@ -9,7 +9,7 @@ import { User } from 'user';
   styleUrls: ['./petprofile.component.css']
 })
 export class PetprofileComponent implements OnInit {
-  owner = localStorage.getItem('User');
+  owner = JSON.parse(localStorage.getItem('User'));
   newPet = new Pet('Frank','Frank','Frank','Frank','Frank', this.owner, 'Insurance');
   constructor(private petService: PetService) { }
 
@@ -18,7 +18,7 @@ export class PetprofileComponent implements OnInit {
 
   addPet(){
     console.log("in addPet")
-    this.newPet.user = this.owner;
+    this.newPet.user = this.owner
     console.log(this.newPet.user);
     this.petService.add(this.newPet).subscribe(
       data => console.log('success', data),
