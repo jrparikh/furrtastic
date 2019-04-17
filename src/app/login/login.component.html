@@ -1,17 +1,18 @@
 <div class="container">
     <div class="jumbotron">
       <h3>Log In</h3>
-<form>
+<form #userForm = "ngForm" (ngSubmit)="userLogin()">
+    {{newUser | json}}
     <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
-      <input type="text" class="form-control" #username placeholder="Username">
+      <input type="text" class="form-control" [(ngModel)]='newUser.username' name="username" placeholder="Username">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control" [(ngModel)]='newUser.password' name='password' placeholder="Password">
     </div>
     
-    <a routerLink="/userpage"><button type="submit" class="btn btn-primary" (click)="getUser(username.value)">Login</button></a>
+ <button type="submit" class="btn btn-primary">Login</button>
   </form>
   <br/>
   <a routerLink="/signup">Don't have an account? Sign up now</a>

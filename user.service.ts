@@ -10,13 +10,13 @@ import { catchError } from 'rxjs/operators';
 export class UserService {
   user: User;
 
-  APP_URL = 'http://localhost:8080/signup.app';
+  APP_URL = 'http://localhost:8080/Furrtastic';
   handleError: any;
 
   constructor(private _http: HttpClient) { }
 
-  getUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): Observable<User>{
-    this.user = new User(value, value2, value3, value4, value5, value6, value7, value8, value9, value10);
+  getUsers(value: string, value2: string, value3: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): Observable<User>{
+    this.user = new User(value, value2, value3,  value5, value6, value7, value8, value9, value10);
     //console.log(this.user);
     // return this._http.post<User>(this.APP_URL, this.user).subscribe
       
@@ -40,4 +40,15 @@ export class UserService {
   //   .pipe(catchError(err => this.handleError(err))
   //   );
   // }
+
+    signup(user: User){
+      console.log(user);
+      return this._http.post<any>(this.APP_URL + '/signup.app', user);
+      //console.log(this._http.post<any>(this.APP_URL + '/signup.app', user));
+    }
+
+    login(user: User){
+      console.log(user);
+      return this._http.post<any>(this.APP_URL + '/login.app', user);
+    }
 }
