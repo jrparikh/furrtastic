@@ -20,10 +20,13 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin(){
+    console.log("in userLogin")
     this.userService.login(this.newUser).subscribe(
       data => console.log('success', data),
       error => console.log('failed', error)
     )
+
+    console.log("subscribed")
   }
 
   // getUser(gUsername: User){
