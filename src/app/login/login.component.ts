@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
       data => console.log('success', data),
       error => console.log('failed', error)
     )
-
+    localStorage.setItem('User', JSON.stringify(this.newUser));
     console.log("subscribed")
   }
 
