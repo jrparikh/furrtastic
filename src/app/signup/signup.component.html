@@ -6,13 +6,13 @@
   <div class="row">
     <div class="col">
         <label for="exampleFormControlSelect1">First Name</label>
-      <input type="text" class="form-control" [(ngModel)]='newUser.fname' name="fname" placeholder="First name">
+      <input type="text" class="form-control" [(ngModel)]='newUser.firstName' name="firstName" placeholder="First name">
           <!-- <h1>{{fname}} {{lname}} {{email}} {{number}} {{address}} {{state}} {{city}} {{zip}} {{userN}} {{passW}}</h1> -->
         
     </div>
     <div class="col">
         <label for="exampleFormControlSelect1">Last Name</label>
-      <input type="text" class="form-control" [(ngModel)]='newUser.lname' name="lname" placeholder="Last name">
+      <input type="text" class="form-control" [(ngModel)]='newUser.lastName' name="lastName" placeholder="Last name">
     </div>
   </div>
 
@@ -104,11 +104,11 @@
           <div class="row">
               <div class="col">
                   <label for="exampleFormControlSelect1">Username</label>
-                <input type="text" class="form-control" [(ngModel)]='newUser.userN' name="userN" placeholder="User Name">
+                <input type="text" class="form-control" [(ngModel)]='newUser.username' name="username" placeholder="User Name">
               </div>
               <div class="col">
                   <label for="exampleFormControlSelect1">Password</label>
-                <input type="password" class="form-control" [(ngModel)]='newUser.passW' name="passW" placeholder="Password">
+                <input type="password" class="form-control" [(ngModel)]='newUser.password' name="password" placeholder="Password">
               </div>
             </div>
 
