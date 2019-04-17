@@ -9,7 +9,7 @@ export class Pet {
     user: User;
     insurance: any;
   
-    constructor(name: string, type: string, weight: string, age: string, conditions: string, user: User, insurance: any){
+    constructor(name: string, type: string, weight: string, age: string, condition: string, user: User, insurance: any){
       // this.name= fname;
       // this.type= lname;
       // this.age= email;

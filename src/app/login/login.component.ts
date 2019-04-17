@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'user';
 import { UserService } from 'user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
   username: string;
   //APP_URL = 'http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic/login.app';
-  constructor(private userService: UserService ) { }
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -27,6 +28,7 @@ export class LoginComponent implements OnInit {
     )
     console.log(JSON.parse(localStorage.getItem('User')));
     console.log("subscribed")
+    this.router.navigate(['/petprofile']);
   }
 
   // getUser(gUsername: User){

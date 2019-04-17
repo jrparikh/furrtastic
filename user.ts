@@ -9,6 +9,7 @@ export class User {
   // zipCode: string;
   // username: string;
   // password: string;
+  userID: number;
 
   constructor(firstName: string, lastName: string, email: string, address: string, state: string, city: string, zipCode: string, username: string, password: string){
     // this.fname= fname;
@@ -22,4 +23,6 @@ export class User {
     // this.username= username;
     // this.password= password;
   }
+
+  
 }
