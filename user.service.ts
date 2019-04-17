@@ -49,6 +49,6 @@ export class UserService {
 
     login(user: User){
       console.log(user);
-      return this._http.get<any>(this.APP_URL + '/login.app', user);
+      return this._http.post<any>(this.APP_URL + '/login.app', user);
     }
 }
