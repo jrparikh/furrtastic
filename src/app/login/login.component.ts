@@ -22,10 +22,10 @@ export class LoginComponent implements OnInit {
   userLogin(){
     console.log("in userLogin")
     this.userService.login(this.newUser).subscribe(
-      data => console.log('success', data),
+      data => localStorage.setItem('User', JSON.stringify(data)),
       error => console.log('failed', error)
     )
-    localStorage.setItem('User', JSON.stringify(this.newUser));
+    console.log(JSON.parse(localStorage.getItem('User')));
     console.log("subscribed")
   }
 

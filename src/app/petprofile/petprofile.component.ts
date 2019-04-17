@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pet } from 'pet';
 import { PetService } from 'pet.service';
 import { User } from 'user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-petprofile',
@@ -11,7 +12,8 @@ import { User } from 'user';
 export class PetprofileComponent implements OnInit {
   owner = JSON.parse(localStorage.getItem('User'));
   newPet = new Pet('Frank','Frank','Frank','Frank','Frank', this.owner, 'Insurance');
-  constructor(private petService: PetService) { }
+
+  constructor(private petService: PetService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -26,6 +28,7 @@ export class PetprofileComponent implements OnInit {
     )
     console.log(this.newPet.user);
     console.log("pet subscribed")
+    this.router.navigate(['/coverage']);
   }
 
 
