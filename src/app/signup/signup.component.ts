@@ -15,13 +15,13 @@ export class SignupComponent {
   
   user: User;
   blah: any;
-  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank',);
+  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank');
   //APP_URL = 'http://localhost:4200/signup';
   //APP_URL = ' http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic';
   handleError: any;
 
-  constructor(private userService: UserService, private _http: HttpClient) { }
+  constructor(private userService: UserService) { }
   
   // add(sUser: User): void{
   //   const newUser: User = Object.assign({}, this.user);
@@ -34,43 +34,43 @@ export class SignupComponent {
   // }
   
 
-  getUser(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void {
-    this.userService.getUsers(value, value2, value3, value5, value6, value7, value8, value9, value10).subscribe(
-      (data: User) => {
-        console.log("data: " + data);
-      },
-      (error: any) => console.log("error: " + error)
-    );
-  }
-//value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string
-  fetUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string){
-    // this.newUser = theUser;
-    // console.log("please work: " + this.newUser);
-    // return this._http.post(this.APP_URL + '/signup', this.newUser)
-    //   .subscribe(
-    //     data => {
-    //       console.log(data);
-    //     }
-    //   );
-    this.user = new User(value, value2, value3, value5, value6, value7, value8, value9, value10);
-    // this.user.fname= value;
-    // this.user.lname= value2;
-    // this.user.email= value3;
-    // this.user.phoneNum= value4;
-    // this.user.address= value5;
-    // this.user.state= value6;
-    // this.user.city= value7;
-    // this.user.zipCode= value8;
-    // this.user.username= value9;
-    // this.user.password= value10;
-    console.log(this.user);
-    //console.log(this.user.fname);
-    //fname.value, lname.value, email.value, number.value, address.value, state.value, city.value, zip.value, userN.value, passW.value
-    this.blah = this._http.post(this.APP_URL + '/signup.app', this.user).subscribe(
-      data => console.log('success ', data),
-      error => console.log('failed', error)
-    );
-    console.log(this.blah);
+//   getUser(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string): void {
+//     this.userService.getUsers(value, value2, value3, value5, value6, value7, value8, value9, value10).subscribe(
+//       (data: User) => {
+//         console.log("data: " + data);
+//       },
+//       (error: any) => console.log("error: " + error)
+//     );
+//   }
+// //value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string
+//   fetUsers(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string){
+//     // this.newUser = theUser;
+//     // console.log("please work: " + this.newUser);
+//     // return this._http.post(this.APP_URL + '/signup', this.newUser)
+//     //   .subscribe(
+//     //     data => {
+//     //       console.log(data);
+//     //     }
+//     //   );
+//     this.user = new User(value, value2, value3, value5, value6, value7, value8, value9, value10);
+//     // this.user.fname= value;
+//     // this.user.lname= value2;
+//     // this.user.email= value3;
+//     // this.user.phoneNum= value4;
+//     // this.user.address= value5;
+//     // this.user.state= value6;
+//     // this.user.city= value7;
+//     // this.user.zipCode= value8;
+//     // this.user.username= value9;
+//     // this.user.password= value10;
+//     console.log(this.user);
+//     //console.log(this.user.fname);
+//     //fname.value, lname.value, email.value, number.value, address.value, state.value, city.value, zip.value, userN.value, passW.value
+//     this.blah = this._http.post(this.APP_URL + '/signup.app', this.user).subscribe(
+//       data => console.log('success ', data),
+//       error => console.log('failed', error)
+//     );
+//     console.log(this.blah);
     // const req = this._http.post(this.APP_URL + '/signup.app', {
     //   fname: this.user.fname,
     //   lname: this.user.lname,
@@ -91,7 +91,7 @@ export class SignupComponent {
     //         console.log(err);
     //       }
     //     );
-  }
+  //}
   // onEnter(value: string, value2: string, value3: string, value4: string, value5: string, value6: string, value7: string, value8: string, value9: string, value10: string) {
   //   // this.user.fname= value;
   //   // this.user.lname= value2;
