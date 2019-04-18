@@ -2,15 +2,15 @@
 <div class="container">
     <div class="jumbotron">
         <h3>Tell us little about your pet</h3>
-<form>
+<form #petForm = "ngForm" (ngSubmit)="addPet()">
     <div class="row">
       <div class="col">
           <label for="exampleFormControlSelect1">Pet Name</label>
-        <input type="text" class="form-control" placeholder="Pet name">
+        <input type="text" class="form-control" [(ngModel)]='newPet.name' name="name" placeholder="Pet name">
       </div>
       <div class="col">
           <label for="exampleFormControlSelect1">Pet Type</label>
-          <select class="form-control" id="exampleFormControlSelect1">
+          <select class="form-control" [(ngModel)]='newPet.type' name="type"  id="exampleFormControlSelect1">
             <option>Dog</option>
             <option>Cat</option>
           </select>
@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col">
             <label for="exampleFormControlSelect1">Pet Size</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" [(ngModel)]='newPet.weight' name="weight"  id="exampleFormControlSelect1">
               <option>Small</option>
               <option>Medium</option>
               <option>Large</option>
@@ -28,7 +28,7 @@
         </div>
         <div class="col">
             <label for="exampleFormControlSelect1">Pet Age</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" [(ngModel)]='newPet.age' name="age"  id="exampleFormControlSelect1">
               <option>0-1</option>
               <option>2-5</option>
               <option>6-8</option>
@@ -41,7 +41,7 @@
       <div class="row">
           <div class="col">
               <label for="exampleFormControlSelect1">Pre-existing Conditions</label>
-              <select class="form-control" id="exampleFormControlSelect1">
+              <select class="form-control" [(ngModel)]='newPet.condition' name="condition"  id="exampleFormControlSelect1">
                 <option>Diabetes</option>
                 <option>Cancer</option>
                 <option>Feline Leukemia</option>
@@ -51,11 +51,9 @@
           </div>
           </div>
 <br/><div class="row">
+              
               <div class="col">
-                  <a routerLink="/home"><button type="submit" class="btn btn-primary">Cancel</button></a>
-              </div>
-              <div class="col">
-                  <a routerLink="/coverage"><button type="submit" class="btn btn-primary">Next</button></a>
+                  <button type="submit" class="btn btn-primary">Next</button>
               </div>
             </div>
           
@@ -63,5 +61,8 @@
     <br/>     
           
   </form>
+  <div class="col">
+    <a routerLink="/home"><button type="submit" class="btn btn-primary">Cancel</button></a>
+</div>
 </div>
 </div>  
