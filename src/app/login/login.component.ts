@@ -12,6 +12,11 @@ export class LoginComponent implements OnInit {
 
   newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank');
   username: string;
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
   //APP_URL = 'http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic/login.app';
   constructor(private userService: UserService ) { }

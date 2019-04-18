@@ -16,6 +16,9 @@ export class SignupComponent {
   user: User;
   blah: any;
   newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank');
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
   //APP_URL = 'http://localhost:4200/signup';
   //APP_URL = ' http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic';
