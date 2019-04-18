@@ -18,7 +18,7 @@ export class SignupComponent {
   submitted = false;
 
   onSubmit() { this.submitted = true; }
-  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank', []);
+  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank');
 
   //APP_URL = 'http://localhost:4200/signup';
   //APP_URL = ' http://localhost:3000/posts/';

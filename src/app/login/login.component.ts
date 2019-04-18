@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank', []);
+  newUser = new User('Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank','Frank');
   username: string;
 
   submitted = false;
