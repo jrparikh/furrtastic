@@ -23,12 +23,12 @@ export class PetprofileComponent implements OnInit {
     this.newPet.user = this.owner
     console.log(this.newPet.user);
     localStorage.setItem('Pet', JSON.stringify(this.newPet));
-    this.petService.add(this.newPet).subscribe(
-      data => console.log('success', data),
-      error => console.log('failed', error)
-    )
+    // this.petService.add(this.newPet).subscribe(
+    //   data => console.log('success', data),
+    //   error => console.log('failed', error)
+    // )
     console.log(this.newPet.user);
-    console.log("pet subscribed")
+    //console.log("pet subscribed")
     this.router.navigate(['/coverage']);
   }
 

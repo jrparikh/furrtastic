@@ -10,8 +10,9 @@ export class User {
   // username: string;
   // password: string;
   userID: number;
+  
 
-  constructor(firstName: string, lastName: string, email: string, address: string, state: string, city: string, zipCode: string, username: string, password: string){
+  constructor(firstName: string, lastName: string, email: string, address: string, state: string, city: string, zipCode: string, username: string, password: string, petList: []){
     // this.fname= fname;
     // this.lname= lname;
     // this.email= email;
