@@ -13,5 +13,6 @@ export class InsuranceService {
 
   add(insurance: Insurance){
     console.log(insurance);
+    return this._http.post<any>(this.APP_URL + '/insurance.app', insurance);
   }
 }

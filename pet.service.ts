@@ -14,6 +14,6 @@ export class PetService {
   add(pet: Pet){
     console.log(pet);
     return this._http.post<any>(this.APP_URL + '/pet.app', pet);
-    //console.log(this._http.post<any>(this.APP_URL + '/signup.app', user));
+    //console.log(this._http.post<any>(this.APP_URL + '/signup.app', pet));
   }
 }

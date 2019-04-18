@@ -15,6 +15,7 @@ export class LoginComponent implements OnInit {
   username: string;
   //APP_URL = 'http://localhost:3000/posts/';
   APP_URL = 'http://localhost:8080/Furrtastic/login.app';
+  
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {

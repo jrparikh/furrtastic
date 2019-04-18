@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { InsuranceService } from 'insurance.service';
+import { Router } from '@angular/router';
+import { Insurance } from 'insurance';
 
 @Component({
   selector: 'app-coverage',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coverage.component.css']
 })
 export class CoverageComponent implements OnInit {
+  pet = JSON.parse(localStorage.getItem('Pet'));
+  insurance = new Insurance(1, 1, "coverage");
 
-  constructor() { }
+  constructor(private insuranceService: InsuranceService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  getMoney(){
+    console.log("in getMoney")
+    this.insurance.pet = this.pet;
+    console.log("Insurance object: ",this.insurance);
+    this.insuranceService.add(this.insurance).subscribe(
+      data => console.log('success', data),
+      error => console.log('failed', error)
+    )
+    console.log(this.insurance);
+    console.log("insurance subscribed")
+    this.router.navigate(['/quote']);
+  }
 }

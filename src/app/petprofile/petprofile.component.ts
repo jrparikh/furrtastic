@@ -22,6 +22,7 @@ export class PetprofileComponent implements OnInit {
     console.log("in addPet")
     this.newPet.user = this.owner
     console.log(this.newPet.user);
+    localStorage.setItem('Pet', JSON.stringify(this.newPet));
     this.petService.add(this.newPet).subscribe(
       data => console.log('success', data),
       error => console.log('failed', error)
