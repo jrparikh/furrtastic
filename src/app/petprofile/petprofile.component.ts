@@ -13,6 +13,10 @@ export class PetprofileComponent implements OnInit {
   owner = JSON.parse(localStorage.getItem('User'));
   newPet = new Pet('Frank','Frank','Frank','Frank','Frank', this.owner, 'Insurance');
 
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
   constructor(private petService: PetService, private router: Router) { }
 
   ngOnInit() {
