@@ -5,14 +5,27 @@
     {{newUser | json}}
     <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
-      <input type="text" class="form-control" [(ngModel)]='newUser.username' name="username" placeholder="Username">
+      <input type="text" class="form-control" [(ngModel)]='newUser.username' #username="ngModel" name="username" placeholder="Username" required>
+      <div *ngIf="username.invalid && (username.dirty || username.touched)"
+      class="alert alert-danger">
+      <div *ngIf="username.errors.required">
+          Username is required.
+        </div>
+        </div>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" [(ngModel)]='newUser.password' name='password' placeholder="Password">
+      <input type="password" class="form-control" [(ngModel)]='newUser.password' #password="ngModel" name='password' placeholder="Password" required>
+    
+      <div *ngIf="password.invalid && (password.dirty || password.touched)"
+      class="alert alert-danger">
+      <div *ngIf="password.errors.required">
+          Password is required.
+        </div>
+        </div>
     </div>
     
- <button type="submit" class="btn btn-primary">Login</button>
+ <button type="submit" class="btn btn-primary" [disabled]="!userForm.form.valid">Login</button>
   </form>
   <br/>
   <a routerLink="/signup">Don't have an account? Sign up now</a>
