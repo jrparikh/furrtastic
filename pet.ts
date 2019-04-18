@@ -6,10 +6,10 @@ export class Pet {
     // age: string;
     // size: string;
     // condition: string;
-    user: User;
+    owner: number;
     insurance: any;
   
-    constructor(name: string, type: string, weight: string, age: string, condition: string, user: User, insurance: any){
+    constructor(name: string, type: string, weight: string, age: string, condition: string, owner: number, insurance: any){
       // this.name= fname;
       // this.type= lname;
       // this.age= email;
