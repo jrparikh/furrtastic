@@ -1,7 +1,7 @@
 import { User } from 'user';
 
 export class Pet {
-    // name: string;
+    name: string;
     // type: string;
     // age: string;
     // size: string;

@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     )
     console.log(JSON.parse(localStorage.getItem('User')));
     console.log("subscribed")
-    this.router.navigate(['/petprofile']);
+    this.router.navigate(['/home']);
   }
 
   // getUser(gUsername: User){

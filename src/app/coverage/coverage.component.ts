@@ -23,7 +23,7 @@ export class CoverageComponent implements OnInit {
     this.insurance.pet = this.pet; //need to fix
     console.log("Insurance object: ",this.insurance); 
     localStorage.setItem('Insurance', JSON.stringify(this.insurance));
-    localStorage.setItem('Pet', JSON.stringify(this.pet));
+    //localStorage.setItem('Pet', JSON.stringify(this.pet));
     this.insuranceService.add(this.insurance).subscribe(
       data => console.log('success', data),
       error => console.log('failed', error)
