@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class UserpageComponent implements OnInit {
 
   user = JSON.parse(localStorage.getItem('User'));
-  pet = JSON.parse(localStorage.getItem('Pet'));
+
+  petArr = JSON.parse(localStorage.getItem('petArr'));
   
   constructor() { }
 

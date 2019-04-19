@@ -11,7 +11,6 @@ export class NavComponent implements OnInit {
 
   user = JSON.parse(localStorage.getItem('User'));
   //userID = this.user.userID;
-
   constructor(private petService: PetService, private router: Router) { }
 
   ngOnInit() {
@@ -19,7 +18,7 @@ export class NavComponent implements OnInit {
 
   thePets(){
     this.petService.getThem(this.user).subscribe(
-      data => console.log('success', data),
+      data => localStorage.setItem('petArr', JSON.stringify(data)),
       error => console.log('failed', error)
     )
   this.router.navigate(['/userpage']);
