@@ -7,6 +7,7 @@ export class Pet {
     // size: string;
     // condition: string;
     owner: number;
+    petID: number;
     insurance: any;
   
     constructor(name: string, type: string, weight: string, age: string, condition: string, owner: number, insurance: any){

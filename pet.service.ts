@@ -16,4 +16,9 @@ export class PetService {
     return this._http.post<any>(this.APP_URL + '/pet.app', pet);
     //console.log(this._http.post<any>(this.APP_URL + '/signup.app', pet));
   }
+
+  getThem(id: number){
+    console.log(id);
+    return this._http.post<any>(this.APP_URL + '/getpets.app', id);
+  }
 }

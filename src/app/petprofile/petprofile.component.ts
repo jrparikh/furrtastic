@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class PetprofileComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('User'));
-  newPet = new Pet('Frank','Frank','Frank','Frank','Frank', this.user, 'Insurance');
+  newPet = new Pet('Frank','Frank','Frank','Frank','Frank', this.user, '');
 
   submitted = false;
 
@@ -27,13 +27,13 @@ export class PetprofileComponent implements OnInit {
     this.newPet.owner = this.user.userID;
     console.log(this.newPet.owner);
     localStorage.setItem('Pet', JSON.stringify(this.newPet));
-    // this.petService.add(this.newPet).subscribe(
-    //   data => console.log('success', data),
-    //   error => console.log('failed', error)
-    // )
+    this.petService.add(this.newPet).subscribe(
+      data => console.log('success', data),
+      error => console.log('failed', error)
+    )
     console.log(this.newPet.owner);
     //console.log("pet subscribed")
-    this.router.navigate(['/coverage']);
+    this.router.navigate(['/home']);
   }
 
 
