@@ -12,7 +12,6 @@ export class UserpageComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('User'));
 
   petArr = JSON.parse(localStorage.getItem('petArr'));
-  pet;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -22,7 +21,7 @@ export class UserpageComponent implements OnInit {
 
   buyInsurance(pet: Pet){
       console.log(pet.name);
-      localStorage.setItem('Pet', JSON.stringify(this.pet));
+      localStorage.setItem('Pet', JSON.stringify(pet));
       this.router.navigate(['/coverage']);
   }
 }
