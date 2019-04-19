@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Pet } from 'pet';
 import { HttpClient } from '@angular/common/http';
+import { User } from 'user';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class PetService {
     //console.log(this._http.post<any>(this.APP_URL + '/signup.app', pet));
   }
 
-  getThem(id: number){
-    console.log(id);
-    return this._http.post<any>(this.APP_URL + '/getpets.app', id);
+  getThem(user: User){
+    console.log(user);
+    return this._http.post<any>(this.APP_URL + '/getpets.app', user);
   }
 }

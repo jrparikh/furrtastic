@@ -10,6 +10,7 @@ import { PetService } from 'pet.service';
 export class NavComponent implements OnInit {
 
   user = JSON.parse(localStorage.getItem('User'));
+  //userID = this.user.userID;
 
   constructor(private petService: PetService, private router: Router) { }
 
@@ -17,7 +18,7 @@ export class NavComponent implements OnInit {
   }
 
   thePets(){
-    this.petService.getThem(this.user.userID).subscribe(
+    this.petService.getThem(this.user).subscribe(
       data => console.log('success', data),
       error => console.log('failed', error)
     )
