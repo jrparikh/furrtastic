@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin(){
+    localStorage.clear();
     console.log("in userLogin")
     this.userService.login(this.newUser).subscribe(
       data => localStorage.setItem('User', JSON.stringify(data)),
