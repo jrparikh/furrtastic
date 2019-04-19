@@ -7,6 +7,38 @@
 
 
       <h5>Plans</h5>
+
+      
+        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Pet name</th>
+              <th>Deductable</th>
+              <th>Reimbursement Level</th>
+              <th>Coverage</th>
+            </tr>
+            </thead>
+            <tbody>
+                <div *ngFor="let pet of petArr">
+                  <tr>
+                    <td>{{pet.name}}</td>
+                    <td>{{pet.name}}</td>
+                    <td>{{pet.name}}</td>
+                    <td>{{pet.name}}</td>
+                  </tr>
+              </div>
+            </tbody>
+          </table>
+      
+
+      <!--
+
+
+
+
+
+      
       <table class="table table-striped">
           <thead>
             <tr>
@@ -20,7 +52,7 @@
           <tbody>
             <div *ngFor="let pet of petArr">
             <tr>
-              <th scope="row">{{pet.name}}</th>
+              <td scope="row">{{pet.name}}</td>
               <td>{{pet.insurance.deductable}}</td>
               <td>{{reimbursementlevel}}</td>
               <td>{{pet.insurance.coverage}}</td>
@@ -31,7 +63,7 @@
             </div>
           </tbody>
         </table>
-
+-->
         <form>
             <div class="row">
                 <div class="col">
