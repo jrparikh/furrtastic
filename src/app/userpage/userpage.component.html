@@ -26,8 +26,11 @@
                     <td>{{pet.name}}</td>
                     <td>{{pet.name}}</td>
                     <td>{{pet.name}}</td>
+                    <td> <div class="col">
+                        <button type="submit" (click)="buyInsurance(pet)" class="btn btn-primary">Buy Now</button>
+                    </div></td>
                   </tr>
-              </div>
+                </div>
             </tbody>
           </table>
       
@@ -69,10 +72,8 @@
                 <div class="col">
                     <a routerLink="/petprofileuser"><button type="submit" class="btn btn-primary">Sign up for another plan</button></a>
                 </div>
-                <div class="col">
-                    <a routerLink="/payment"><button type="submit" class="btn btn-primary">Buy Now</button></a>
-                </div>
-              </div>
+                
+            </div>
         </form>
 
 </div>
