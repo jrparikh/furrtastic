@@ -16,14 +16,14 @@
               <th>Pet name</th>
               <th>Deductable</th>
               <th>Reimbursement Level</th>
-              <th>Coverage</th>
             </tr>
             </thead>
             <tbody>
                 <div *ngFor="let pet of petArr">
                   <tr>
                     <td>{{pet.name}}</td>
-                   
+                    <td>{{pet.ins.deductible}}</td>
+                    <td>{{pet.ins.coverage}}</td>
                     <td> <div class="col">
                         <button type="submit" (click)="buyInsurance(pet)" class="btn btn-primary">Buy Now</button>
                     </div></td>
