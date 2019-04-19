@@ -19,8 +19,8 @@
             </tr>
             </thead>
             <tbody>
-                <div *ngFor="let pet of petArr">
-                  <tr>
+                
+                  <tr *ngFor="let pet of petArr">
                     <td>{{pet.name}}</td>
                     <td>{{pet.ins.deductible}}</td>
                     <td>{{pet.ins.coverage}}</td>
@@ -28,7 +28,7 @@
                         <button type="submit" (click)="buyInsurance(pet)" class="btn btn-primary">Buy Now</button>
                     </div></td>
                   </tr>
-                </div>
+                
             </tbody>
           </table>
       
