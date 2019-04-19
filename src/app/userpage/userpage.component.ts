@@ -14,6 +14,8 @@ export class UserpageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("petArr: ", this.petArr);
+    console.log("petArr[0]: ", this.petArr[0]);
   }
 
 
