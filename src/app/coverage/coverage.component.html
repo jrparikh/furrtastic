@@ -1,11 +1,12 @@
 
 <div class="container">
     <div class="jumbotron">
-<h4>Please choose your coverage options</h4>
+<h3>Please choose your coverage options</h3>
 <br/>
 <form #insuranceForm = "ngForm" (ngSubmit)="getMoney()">
     {{insurance | json}}
-<h6>Deductable</h6>
+<h5>Deductable</h5>
+<h6>Please select one:</h6>
 <div class="form-check form-check-inline">
     <input class="form-check-input" type="radio" [(ngModel)]="insurance.deductable" name="inlineRadioOptions" id="inlineRadio1" value="250">
     <label class="form-check-label" for="inlineRadio1">$250</label>
@@ -20,8 +21,9 @@
     </div>
     <br/>
     <br/>
-    <h6>Reimbursement Level</h6>
- 
+
+    <h5>Reimbursement Level</h5>
+    <h6>Please select one:</h6>
 <div class="form-check form-check-inline">
     <input class="form-check-input2" type="radio" [(ngModel)]="insurance.coverage" name="inlineRadioOptions2" id="inlineRadio4" value="80%">
     <label class="form-check-label" for="inlineRadio4">80%</label>
@@ -36,8 +38,8 @@
     </div>
 <br/>
 <br/>
-    <h6>Coverage</h6>
-    
+    <h5>Coverage</h5>
+    <h6>Select as many as you would like:</h6>
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
         <label class="form-check-label" for="inlineCheckbox1">Accident & Illness</label>

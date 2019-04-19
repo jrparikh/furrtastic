@@ -12,6 +12,10 @@ export class CoverageComponent implements OnInit {
   pet = JSON.parse(localStorage.getItem('Pet'));
   insurance = new Insurance(1, 1, "coverage");
 
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
   constructor(private insuranceService: InsuranceService, private router: Router) { }
 
   ngOnInit() {
