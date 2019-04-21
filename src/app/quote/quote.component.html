@@ -2,7 +2,7 @@
     <div class="jumbotron">
 <h3>Your quote for pet insurance</h3>
 <br/>
-  <h1>insert quote here</h1>
+  <h1>${{insurance.amount/12 | number:'2.2-2'}} per month!</h1>
   
 <br/>
   <form #totalForm = "ngForm" (ngSubmit)="getTotal()">

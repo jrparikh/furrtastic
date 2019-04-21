@@ -10,8 +10,8 @@ import { Insurance } from 'insurance';
 })
 export class CoverageComponent implements OnInit {
   pet = JSON.parse(localStorage.getItem('Pet'));
-  insurance = new Insurance(1, 1, "coverage");
-
+  insurance = new Insurance(1, 1, 1);
+  //coverage: number;
   constructor(private insuranceService: InsuranceService, private router: Router) { }
 
   ngOnInit() {
@@ -19,7 +19,9 @@ export class CoverageComponent implements OnInit {
 
   getMoney(){
     console.log("in getMoney")
+    this.insurance.amount = Number(this.insurance.coverage) + Number(this.insurance.deductable) + this.pet.petTotal;
     
+    console.log("amount: ", this.insurance.amount);
     this.insurance.pet = this.pet; //need to fix
     console.log("Insurance object: ",this.insurance); 
     localStorage.setItem('Insurance', JSON.stringify(this.insurance));

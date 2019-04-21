@@ -22,8 +22,8 @@
           <label for="exampleFormControlSelect1">Pet Type</label>
           <select class="form-control" [(ngModel)]='newPet.type' #type="ngModel" name="type"  id="exampleFormControlSelect1" required>
             <option value="" disabled selected>Select your pet's type</option>
-            <option>Dog</option>
-            <option>Cat</option>
+            <option value="3">Dog</option>
+            <option value="1">Cat</option>
           </select>
 
           <div *ngIf="type.invalid && (type.dirty || type.touched)"
@@ -39,11 +39,11 @@
     <div class="row">
         <div class="col">
             <label for="exampleFormControlSelect1">Pet Size</label>
-            <select class="form-control" [(ngModel)]='newPet.weight' #weight="ngModel" name="weight"  id="exampleFormControlSelect1" required>
+            <select class="form-control" [(ngModel)]='newPet.size' #weight="ngModel" name="weight"  id="exampleFormControlSelect1" required>
               <option value="" disabled selected>Select your pet's size</option>
-              <option>Small</option>
-              <option>Medium</option>
-              <option>Large</option>
+              <option value="1">Small</option>
+              <option value="2">Medium</option>
+              <option value="3">Large</option>
             </select>
             <div *ngIf="weight.invalid && (weight.dirty || weight.touched)"
         class="alert alert-danger">
@@ -57,11 +57,11 @@
             <label for="exampleFormControlSelect1">Pet Age</label>
             <select class="form-control" [(ngModel)]='newPet.age' #age="ngModel" name="age"  id="exampleFormControlSelect1" required>
               <option value="" disabled selected>Select your pet's age</option>
-              <option>0-1</option>
-              <option>2-5</option>
-              <option>6-8</option>
-              <option>8-9</option>
-              <option>10+</option>
+              <option value="2">0-1</option>
+              <option value="1">2-5</option>
+              <option value="3">6-8</option>
+              <option value="4">8-9</option>
+              <option value="5">10+</option>
             </select>
             <div *ngIf="age.invalid && (age.dirty || age.touched)"
         class="alert alert-danger">
@@ -78,11 +78,11 @@
               <label for="exampleFormControlSelect1">Pre-existing Conditions</label>
               <select class="form-control" [(ngModel)]='newPet.condition' #condition="ngModel" name="condition"  id="exampleFormControlSelect1" required>
                 <option value="" disabled selected>Select your pet's pre-existing conditions</option>
-                <option>Diabetes</option>
-                <option>Cancer</option>
-                <option>Feline Leukemia</option>
-                <option>Other</option>
-                <option>None</option>
+                <option value="5">Diabetes</option>
+                <option value="5">Cancer</option>
+                <option value="5">Feline Leukemia</option>
+                <option value="5">Other</option>
+                <option value="0">None</option>
               </select>
 
               <div *ngIf="condition.invalid && (condition.dirty || condition.touched)"

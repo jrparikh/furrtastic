@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PetprofileComponent implements OnInit {
   user = JSON.parse(localStorage.getItem('User'));
   newPet = new Pet('Frank','Frank','Frank','Frank','Frank', this.user, '');
-
+  petPre: number;
   submitted = false;
 
   onSubmit() { this.submitted = true; }
@@ -24,6 +24,15 @@ export class PetprofileComponent implements OnInit {
 
   addPet(){
     console.log("in addPet")
+    this.petPre = Number(this.newPet.type) + Number(this.newPet.age) + Number(this.newPet.size) + Number(this.newPet.condition);
+    if(this.petPre < 6){
+      this.newPet.petTotal = 0;
+    }else if(this.petPre < 6 && this.petPre < 11){
+      this.newPet.petTotal = 25;
+    }else{
+      this.newPet.petTotal = 50;
+    }
+    console.log("petTotal: ", this.newPet.petTotal);
     this.newPet.owner = this.user.userID;
     console.log(this.newPet.owner);
     localStorage.setItem('Pet', JSON.stringify(this.newPet));
