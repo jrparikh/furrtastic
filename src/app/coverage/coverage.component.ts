@@ -10,6 +10,7 @@ import { Insurance } from 'insurance';
 })
 export class CoverageComponent implements OnInit {
   pet = JSON.parse(localStorage.getItem('Pet'));
+  petTotal = JSON.parse(localStorage.getItem('petTotal'));
   insurance = new Insurance(1, 1, 1);
   //coverage: number;
   constructor(private insuranceService: InsuranceService, private router: Router) { }
@@ -19,7 +20,7 @@ export class CoverageComponent implements OnInit {
 
   getMoney(){
     console.log("in getMoney")
-    this.insurance.amount = Number(this.insurance.coverage) + Number(this.insurance.deductable) + this.pet.petTotal;
+    this.insurance.amount = Number(this.insurance.coverage) + Number(this.insurance.deductable) + this.petTotal;
     
     console.log("amount: ", this.insurance.amount);
     this.insurance.pet = this.pet; //need to fix

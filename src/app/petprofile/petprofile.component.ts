@@ -14,7 +14,7 @@ export class PetprofileComponent implements OnInit {
   newPet = new Pet('Frank','Frank','Frank','Frank','Frank', this.user, '');
   petPre: number;
   submitted = false;
-
+  petTotal: number;
   onSubmit() { this.submitted = true; }
 
   constructor(private petService: PetService, private router: Router) { }
@@ -26,15 +26,16 @@ export class PetprofileComponent implements OnInit {
     console.log("in addPet")
     this.petPre = Number(this.newPet.type) + Number(this.newPet.age) + Number(this.newPet.size) + Number(this.newPet.condition);
     if(this.petPre < 6){
-      this.newPet.petTotal = 0;
+      this.petTotal = 0;
     }else if(this.petPre < 6 && this.petPre < 11){
-      this.newPet.petTotal = 25;
+      this.petTotal = 25;
     }else{
-      this.newPet.petTotal = 50;
+      this.petTotal = 50;
     }
-    console.log("petTotal: ", this.newPet.petTotal);
+    console.log("petTotal: ", this.petTotal);
     this.newPet.owner = this.user.userID;
     console.log(this.newPet.owner);
+    localStorage.setItem('petTotal', JSON.stringify(this.petTotal));
     localStorage.setItem('Pet', JSON.stringify(this.newPet));
     this.petService.add(this.newPet).subscribe(
       data => console.log('success', data),

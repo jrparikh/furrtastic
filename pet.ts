@@ -9,7 +9,7 @@ export class Pet {
     owner: number;
     petID: number;
     insurance: any;
-    petTotal: number;
+    //petTotal: number;
     
     constructor(name: string, type: string, weight: string, age: string, condition: string, owner: number, insurance: any){
       // this.name= fname;

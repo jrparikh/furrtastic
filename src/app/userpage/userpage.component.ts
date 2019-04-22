@@ -15,8 +15,8 @@ export class UserpageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    console.log("petArr: ", this.petArr);
-    console.log("petArr[0]: ", this.petArr[0]);
+    //console.log("petArr: ", this.petArr);
+    //console.log("petArr[0]: ", this.petArr[0]);
   }
 
   buyInsurance(pet: Pet){
