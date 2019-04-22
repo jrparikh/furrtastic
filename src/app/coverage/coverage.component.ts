@@ -23,7 +23,7 @@ export class CoverageComponent implements OnInit {
     this.insurance.amount = Number(this.insurance.coverage) + Number(this.insurance.deductable) + this.petTotal;
     
     console.log("amount: ", this.insurance.amount);
-    this.insurance.pet = this.pet //need to fix
+    this.insurance.pet = this.pet.petID; //need to fix
     console.log("Insurance object: ",this.insurance); 
     localStorage.setItem('Insurance', JSON.stringify(this.insurance));
     //localStorage.setItem('Pet', JSON.stringify(this.pet));
