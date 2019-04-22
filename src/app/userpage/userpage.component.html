@@ -22,8 +22,8 @@
                 
                   <tr *ngFor="let pet of petArr">
                     <td>{{pet.name}}</td>
-                    <td>{{pet.ins.deductible}}</td>
-                    <td>{{pet.ins.coverage}}</td>
+                    <td>{{pet?.ins?.deductible}}</td>
+                    <td>{{pet?.ins?.coverage}}</td>
                     <td> <div class="col">
                         <button type="submit" (click)="buyInsurance(pet)" class="btn btn-primary">Buy Now</button>
                     </div></td>
@@ -68,7 +68,7 @@
         <form>
             <div class="row">
                 <div class="col">
-                    <a routerLink="/petprofileuser"><button type="submit" class="btn btn-primary">Sign up for another plan</button></a>
+                    <a routerLink="/petprofile"><button type="submit" class="btn btn-primary">Sign up for another plan</button></a>
                 </div>
                 
             </div>
