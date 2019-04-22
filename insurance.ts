@@ -2,7 +2,7 @@ import { Pet } from 'pet';
 
 export class Insurance {
     
-    pet: number;
+    pet: Pet;
     amount: number
     deductable: number;
     coverage: number;
