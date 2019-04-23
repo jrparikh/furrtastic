@@ -24,6 +24,7 @@ export class CoverageComponent implements OnInit {
     
     console.log("amount: ", this.insurance.amount);
     this.insurance.pet = this.pet.petID; //need to fix
+    this.pet.insurance = this.insurance.amount;
     console.log("Insurance object: ",this.insurance); 
     localStorage.setItem('Insurance', JSON.stringify(this.insurance));
     //localStorage.setItem('Pet', JSON.stringify(this.pet));
