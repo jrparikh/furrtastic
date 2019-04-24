@@ -2,7 +2,6 @@
     <div class="jumbotron">
       <h3>Log In</h3>
 <form #userForm = "ngForm" (ngSubmit)="userLogin()">
-    {{newUser | json}}
     <div class="form-group">
       <label for="exampleInputEmail1">Username</label>
       <input type="text" class="form-control" [(ngModel)]='newUser.username' #username="ngModel" name="username" placeholder="Username" required>

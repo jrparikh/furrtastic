@@ -1,12 +1,42 @@
 <div class="container">
     <div class="jumbotron">
 
-      <h3>Welcome {{user.fname}} {{user.lname}}</h3>
+      <h3>Welcome {{user.firstName}} {{user.lastName}}</h3>
       <br/>
       <br/>
 
 
       <h5>Plans</h5>
+
+      
+        
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Pet name</th>
+              <th>Buy Now</th>
+            </tr>
+            </thead>
+            <tbody>
+                
+                  <tr *ngFor="let pet of petArr">
+                    <td>{{pet.name}}</td>
+                    <td> <div class="col">
+                        <button type="submit" (click)="buyInsurance(pet)" class="btn btn-primary">Buy Now</button>
+                    </div></td>
+                  </tr>
+                
+            </tbody>
+          </table>
+      
+
+      <!--
+
+
+
+
+
+      
       <table class="table table-striped">
           <thead>
             <tr>
@@ -18,8 +48,9 @@
             </tr>
           </thead>
           <tbody>
+            <div *ngFor="let pet of petArr">
             <tr>
-              <th scope="row">{{pet.name}}</th>
+              <td scope="row">{{pet.name}}</td>
               <td>{{pet.insurance.deductable}}</td>
               <td>{{reimbursementlevel}}</td>
               <td>{{pet.insurance.coverage}}</td>
@@ -27,18 +58,17 @@
                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
                 </div></td>
             </tr>
+            </div>
           </tbody>
         </table>
-
+-->
         <form>
             <div class="row">
                 <div class="col">
-                    <a routerLink="/petprofileuser"><button type="submit" class="btn btn-primary">Sign up for another plan</button></a>
+                    <a routerLink="/petprofile"><button type="submit" class="btn btn-primary">Sign up for another plan</button></a>
                 </div>
-                <div class="col">
-                    <a routerLink="/payment"><button type="submit" class="btn btn-primary">Buy Now</button></a>
-                </div>
-              </div>
+                
+            </div>
         </form>
 
 </div>

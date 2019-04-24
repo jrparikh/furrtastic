@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PetService } from 'pet.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  user = JSON.parse(localStorage.getItem('User'));
+  //userID = this.user.userID;
+  constructor(private petService: PetService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  thePets(){
+    this.petService.getThem(this.user).subscribe(
+      data => localStorage.setItem('petArr', JSON.stringify(data)),
+      error => console.log('failed', error)
+    )
+  this.router.navigate(['/userpage']);
+  }
 }

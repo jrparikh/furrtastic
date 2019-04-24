@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Pet } from 'pet';
 
 @Component({
   selector: 'app-userpage',
@@ -8,12 +10,18 @@ import { Component, OnInit } from '@angular/core';
 export class UserpageComponent implements OnInit {
 
   user = JSON.parse(localStorage.getItem('User'));
-  pet = JSON.parse(localStorage.getItem('Pet'));
-  
-  constructor() { }
+
+  petArr = JSON.parse(localStorage.getItem('petArr'));
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    //console.log("petArr: ", this.petArr);
+    //console.log("petArr[0]: ", this.petArr[0]);
   }
 
-
+  buyInsurance(pet: Pet){
+      console.log(pet.name);
+      localStorage.setItem('Pet', JSON.stringify(pet));
+      this.router.navigate(['/coverage']);
+  }
 }

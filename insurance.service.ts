@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class InsuranceService {
 
-  APP_URL = 'http://localhost:8080/Furrtastic';
+  APP_URL = '18.216.185.182:8080/Furrtastic';
 
   constructor(private _http: HttpClient) { }
 

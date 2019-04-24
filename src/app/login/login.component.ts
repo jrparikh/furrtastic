@@ -27,6 +27,9 @@ export class LoginComponent implements OnInit {
   }
 
   userLogin(){
+    //localStorage.removeItem('Pet');
+    //localStorage.removeItem('petArr');
+    //localStorage.removeItem('User');
     console.log("in userLogin")
     this.userService.login(this.newUser).subscribe(
       data => localStorage.setItem('User', JSON.stringify(data)),
@@ -34,7 +37,7 @@ export class LoginComponent implements OnInit {
     )
     console.log(JSON.parse(localStorage.getItem('User')));
     console.log("subscribed")
-    this.router.navigate(['/petprofile']);
+    this.router.navigate(['/home']);
   }
 
   // getUser(gUsername: User){

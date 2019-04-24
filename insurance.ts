@@ -2,9 +2,11 @@ import { Pet } from 'pet';
 
 export class Insurance {
     
-    pet: Pet;
-
-    constructor(amount: number, deductable: number, coverage: string){
+    pet: number;
+    amount: number
+    deductable: number;
+    coverage: number;
+    constructor(amount: number, deductable: number, coverage: number){
 
     }
 }

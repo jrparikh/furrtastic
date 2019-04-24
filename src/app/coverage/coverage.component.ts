@@ -10,8 +10,9 @@ import { Insurance } from 'insurance';
 })
 export class CoverageComponent implements OnInit {
   pet = JSON.parse(localStorage.getItem('Pet'));
-  insurance = new Insurance(1, 1, "coverage");
-
+  petTotal = JSON.parse(localStorage.getItem('petTotal'));
+  insurance = new Insurance(1, 1, 1);
+  //coverage: number;
   constructor(private insuranceService: InsuranceService, private router: Router) { }
 
   ngOnInit() {
@@ -19,15 +20,18 @@ export class CoverageComponent implements OnInit {
 
   getMoney(){
     console.log("in getMoney")
+    this.insurance.amount = Number(this.insurance.coverage) + Number(this.insurance.deductable) + this.petTotal;
     
-    this.pet.insurance = this.insurance;
+    console.log("amount: ", this.insurance.amount);
+    this.insurance.pet = this.pet.petID; //need to fix
+    this.pet.insurance = this.insurance.amount;
     console.log("Insurance object: ",this.insurance); 
     localStorage.setItem('Insurance', JSON.stringify(this.insurance));
-    localStorage.setItem('Pet', JSON.stringify(this.pet));
-    // this.insuranceService.add(this.insurance).subscribe(
-    //   data => console.log('success', data),
-    //   error => console.log('failed', error)
-    // )
+    //localStorage.setItem('Pet', JSON.stringify(this.pet));
+    this.insuranceService.add(this.insurance).subscribe(
+      data => console.log('success', data),
+      error => console.log('failed', error)
+    )
     console.log(this.insurance);
     console.log("insurance subscribed")
     this.router.navigate(['/quote']);

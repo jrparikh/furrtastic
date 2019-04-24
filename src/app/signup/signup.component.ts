@@ -4,6 +4,7 @@ import { UserService } from 'user.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { error } from 'util';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class SignupComponent {
   APP_URL = 'http://localhost:8080/Furrtastic';
   handleError: any;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
   
   // add(sUser: User): void{
   //   const newUser: User = Object.assign({}, this.user);
@@ -126,5 +127,6 @@ export class SignupComponent {
       data => console.log('success', data),
       error => console.log('failed', error)
     )
+    this.router.navigate(['/home']);
   }
 }
