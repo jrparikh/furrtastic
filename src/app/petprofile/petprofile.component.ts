@@ -33,7 +33,7 @@ export class PetprofileComponent implements OnInit {
       this.petTotal = 50;
     }
     console.log("petTotal: ", this.petTotal);
-    this.newPet.owner = this.user.userID;
+    //this.newPet.owner = this.user.userID;
     console.log(this.newPet.owner);
     localStorage.setItem('petTotal', JSON.stringify(this.petTotal));
     localStorage.setItem('Pet', JSON.stringify(this.newPet));
