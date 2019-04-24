@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/operators';
 export class UserService {
   user: User;
 
-  APP_URL = '18.216.185.182:8080/Furrtastic';
+  APP_URL = '3.14.80.70:8080/Furrtastic';
   handleError: any;
 
   constructor(private _http: HttpClient) { }

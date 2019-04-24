@@ -27,13 +27,14 @@ export class CoverageComponent implements OnInit {
     this.pet.insurance = this.insurance.amount;
     console.log("Insurance object: ",this.insurance); 
     localStorage.setItem('Insurance', JSON.stringify(this.insurance));
+    this.router.navigate(['/quote']);
     //localStorage.setItem('Pet', JSON.stringify(this.pet));
-    this.insuranceService.add(this.insurance).subscribe(
-      data => console.log('success', data),
-      error => console.log('failed', error)
-    )
+    //this.insuranceService.add(this.insurance).subscribe(
+    //  data => console.log('success', data),
+    //  error => console.log('failed', error)
+    //)
     console.log(this.insurance);
     console.log("insurance subscribed")
-    this.router.navigate(['/quote']);
+    
   }
 }

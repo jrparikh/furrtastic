@@ -8,7 +8,7 @@ import { User } from 'user';
 })
 export class PetService {
 
-  APP_URL = '18.216.185.182:8080/Furrtastic';
+  APP_URL = '3.14.80.70:8080/Furrtastic';
 
   constructor(private _http: HttpClient) { }
 
